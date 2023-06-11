@@ -1,0 +1,20 @@
+.content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 37px;
+}
+
+.content:before {
+    position: absolute;
+    content: '';
+    width: 388px;
+    height: 388px;
+    border-radius: 50%;
+    top: 41px;
+    left: calc(35% - 5px);
+    background-image: url('../../assets/sun.png');
+    background-repeat: no-repeat;
+    z-index: 10;
+}
