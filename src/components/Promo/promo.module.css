@@ -26,8 +26,8 @@
     color: #818287;
     font-size: 14px;
     font-weight: 100;
-    border: 1px solid #263e66;
-    border-image: linear-gradient(to right top, #263e66, #0f1f30, #263e66);
+    border: 1px solid #3969a6;
+    border-image: linear-gradient(to right top, #3969a6, #0f1f2d, #3969a6);
     border-image-slice: 1;
 }
 
