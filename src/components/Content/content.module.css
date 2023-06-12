@@ -18,3 +18,14 @@
     background-repeat: no-repeat;
     z-index: 10;
 }
+.content:after {
+    position: absolute;
+    content: '';
+    width: 406px;
+    height: 58px;
+    top: 297px;
+    left: calc(18% + 3px);
+    background-image: url('../../assets/figure.png');
+    background-repeat: no-repeat;
+    z-index: 10;
+}
