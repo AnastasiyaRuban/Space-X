@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './advantages.module.css';
-import { CounterContent } from '../CounterContent/CounterContent';
+import { CounterContent } from '../../CounterContent/CounterContent';
 
 export function Advantages() {
   return (
