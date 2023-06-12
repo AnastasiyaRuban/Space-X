@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './header.module.css';
 import Logo from '../../assets/Logo.png';
+import Burger from './Burger/Burger';
+import Nav from './Nav/Nav';
 
 export function Header() {
+  const [screenSize, setScreenSize] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setScreenSize(window.screen.width);
+    window.addEventListener('resize', changeScreenSize);
+
+    return () => {
+      window.removeEventListener('resize', changeScreenSize);
+    };
+  }, [screenSize]);
+
+  const changeScreenSize = () => {
+    setScreenSize(window.screen.width);
+  };
+
+  const handleClick = (e) => {
+    // e.target.classList.toggle('active');
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={` ${styles.header__container} container`}>
@@ -12,40 +35,9 @@ export function Header() {
           </a>
         </div>
 
-        <nav className={styles.header__nav}>
-          <ul className={styles.header__list}>
-            <li className={styles.header__item}>
-              <a href='/' className={styles.header__link}>
-                Главная
-              </a>
-            </li>
-            <li className={styles.header__item}>
-              <a href='/' className={styles.header__link}>
-                Технология
-              </a>
-            </li>
-            <li className={styles.header__item}>
-              <a href='/' className={styles.header__link}>
-                График полетов
-              </a>
-            </li>
-            <li className={styles.header__item}>
-              <a href='/' className={styles.header__link}>
-                Гарантии
-              </a>
-            </li>
-            <li className={styles.header__item}>
-              <a href='/' className={styles.header__link}>
-                О компании
-              </a>
-            </li>
-            <li className={styles.header__item}>
-              <a href='/' className={styles.header__link}>
-                Контакты
-              </a>
-            </li>
-          </ul>
-        </nav>
+        {screenSize <= 1024 ? <Burger onClick={handleClick} /> : ''}
+
+        <Nav screenSize={screenSize} className={menuOpen ? 'nav-open' : ''} />
       </div>
     </header>
   );
