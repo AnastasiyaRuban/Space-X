@@ -1,0 +1,46 @@
+.layout {
+    position: relative;
+    min-height: 660px;
+    background-image: url('../../assets/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.layout::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/sun.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+} 
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 15px;
+}
+
+@media (max-width: 1440px) {
+    .layout,
+    .layout::before {
+        background-size: cover;
+        background-position-x: 44%;
+        background-position-y: top;
+    }
+}
+@media (max-width: 1024px) {
+    .layout::before {
+        display: none;
+    }
+}
+@media (max-width: 440px) {
+    .layout {
+        background-position-x: 41%;
+    }
+}
