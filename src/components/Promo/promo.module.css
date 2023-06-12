@@ -21,11 +21,62 @@
 }
 
 .promo__button {
+    position: relative;
     padding: 8px 22px;
     color: #818287;
     font-size: 14px;
     font-weight: 100;
-    border: 2px solid #263e66;
+    border: 1px solid #263e66;
     border-image: linear-gradient(to right top, #263e66, #0f1f30, #263e66);
     border-image-slice: 1;
+}
+
+.promo__button::before,
+.promo__button::after {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+}
+
+.promo__button::before {
+    left: -1px;
+    bottom: -1px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.promo__button::after {
+    right: -1px;
+    top: -1px;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+
+
+.promo__button-container {
+    width: fit-content;
+    position: relative;
+}
+
+.promo__button-container::before,
+.promo__button-container::after {
+    position: absolute;
+    content: '';
+    width: 7px;
+    height: 7px;
+}
+
+.promo__button-container::before {
+    left: -1px;
+    bottom: -1px;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    filter: blur(2px);
+}
+.promo__button-container::after {
+    right: -1px;
+    top: -1px;
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+    filter: blur(2px);
 }

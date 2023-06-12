@@ -8,7 +8,9 @@ export function Promo() {
         ПУТЕШЕСТВИЕ
         <span className={styles.promo__subtitle}> на красную планету</span>
       </h1>
-      <button className={styles.promo__button}>Начать путешествие</button>
+      <div className={styles['promo__button-container']}>
+        <button className={styles.promo__button}>Начать путешествие</button>
+      </div>
     </div>
   );
 }
