@@ -1,12 +1,15 @@
 import React from 'react';
 import styles from './header.module.css';
+import Logo from '../../assets/Logo.png';
 
 export function Header() {
   return (
     <header className={styles.header}>
       <div className={` ${styles.header__container} container`}>
         <div className={styles.header__logo}>
-          <a href='/' className={styles['header__logo-link']}></a>
+          <a href='/' className={styles['header__logo-link']}>
+            <img src={Logo} alt='Логотип Space-X' />
+          </a>
         </div>
 
         <nav className={styles.header__nav}>

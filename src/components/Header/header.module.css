@@ -1,5 +1,8 @@
+/* border-top: 2px solid rgba(153, 148, 148, 0.21);*/
+
 .header {
     position: relative;
+    min-height: 97px;
     border: 2px solid rgba(153, 148, 148, 0.21);
 }
 
@@ -25,60 +28,69 @@
 .header__logo {
     position: relative;
     display: flex;
-    min-height: 97px;
-    min-width: 315px;
+    height: 97px;
+    width: 315px;
     align-items: center;
-    
-}
 
-.header__logo:before, 
-.header__logo:after {
-    content: "";
-    z-index: 1;
+}
+.header__logo-link {
+    position: relative;
     display: block;
-    position: absolute;
-    background: transparent;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: 50% 50%;
-}
-
-.header__logo:before {
-    width: calc(100% + 4px);
-    height: calc(100% - 14px);
+    padding-left: 24px;
+    padding-top: 24px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    height: 100%;
     border-left: 2px solid rgba(153, 148, 148, 0.21);
     border-right: 2px solid rgba(153, 148, 148, 0.21);
-    transition: height 0.6s ease-in;
-}
-.header__logo:after {
-    height: calc(100% + 4px);
-    width: calc(100% - 14px);
-    /* border-top: 2px solid rgba(153, 148, 148, 0.21);
-    border-bottom: 2px solid rgba(153, 148, 148, 0.21); */
-    transition: width 0.6s ease-in;
 }
 
-.header__logo:hover:before, 
-.header__logo:focus:before {
-    height: 0;
-}
-.header__logo:hover:after, 
-.header__logo:focus:after {
-    width: 0;
-}
-
-.header__logo-link {
+/* ВЕРХНИЕ УГОЛКИ */
+.header__logo::before, 
+.header__logo::after {
     position: absolute;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
+    content: '';
     top: -2px;
-    left: -2px;
-    border: 2px solid white;
-    background-image: url('../../assets/Logo.png');
-    background-repeat: no-repeat;
-    background-position: 26px 24px;
+    height: 7px;
+    width: 7px;
 }
+
+.header__logo::after {
+    left: -2px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.header__logo::before {
+    right:  -2px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+
+/* НИЖНИЕ УГОЛКИ */
+.header__logo-link::before, 
+.header__logo-link::after {
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    height: 7px;
+    width: 7px;
+}
+
+.header__logo-link::after {
+    left: -2px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.header__logo-link::before {
+    right:  -2px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+
 
 .header__list {
     display: flex;
@@ -109,3 +121,5 @@
 .header__link:focus {
     color: #b1b1b1;
 }
+
+
